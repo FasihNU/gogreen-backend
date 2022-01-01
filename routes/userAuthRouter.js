@@ -30,9 +30,9 @@ userAuthRouter.route('/login')
           return res.status(409).json({success: false,message:"Invalid username or password"});
       }
 
-      if(!user.verified){
-        return res.status(409).json({success: false,message:"Please verify your email before login"});
-      }
+      // if(!user.verified){
+      //   return res.status(409).json({success: false,message:"Please verify your email before login"});
+      // }
       
       let result = await bcryptModule.CompareHash(req.body.password, user.password);
       // console.log("reslult : "+ user);
